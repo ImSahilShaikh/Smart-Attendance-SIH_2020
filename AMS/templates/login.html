@@ -1,0 +1,27 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+  <title>Admin Login</title>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login.css'%}">
+</head>
+<body style="background: #d1e0d5">
+<div class="container">
+  {% block content %}
+  <form method='POST' action="/adminLogin">
+    {% csrf_token %}
+    <div class="row" style="margin-top: 200px;">
+        <div class="col col-md-4">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+      </div>
+    </div>
+  </form>
+  {% endblock content %}
+</div>
+</body>
+</html>
